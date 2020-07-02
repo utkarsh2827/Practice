@@ -97,8 +97,29 @@ class Traversals{
 			}
 		}
 	}
-	
+	public void morrisPreOrder(Node root){
+		Node curr = root;
+		while(curr!=null){
+			if(curr.left==null){
+				System.out.print(curr.data+" ");
+				curr = curr.right;
+			}
+			else{
+				Node pred = get_predecessor(curr);
+				if(pred.right == null){
+					System.out.print(curr.data+" ");
+					pred.right = curr;
+					curr = curr.left;
+				}
+				else{
+					pred.right = null;
+					curr = curr.right;
+				}
 
+			}
+		}
+	
+	}
 	// Inorders
 	public void inOrder(Node root){
 		if(root == null){
@@ -257,6 +278,13 @@ class Traversals{
 			}
 		}
 	}
+	public void morrisPostOrder(Node root){
+		Node curr = root;
+		// while(curr!=null){
+			
+		// }
+		print("I dont understand it!");
+	}
 	// Breadth First Search
 	public void bfs(Node root){
 		Queue<Node> q = new LinkedList<Node>();
@@ -284,7 +312,7 @@ class Traversals{
 		for(int i = 0;i<n;i++){
 			A.addNode(sc.nextInt());
 		}
-
+		print("\n\n\n");
 		print("InOrder Traversal:\n");
 		A.inOrder(A.head);
 		print("\n");
@@ -295,14 +323,18 @@ class Traversals{
 		A.morrisInOrder(A.head);
 		print("\n");
 
+		print("\n\n");
 		print("PreOrder Traversal:\n");
 		A.preOrder(A.head);
 		print("\n");
 		print("Iterative PreOrder Traversal:\n");
 		A.iterativePreOrder(A.head);
 		print("\n");
+		print("Morris PreOrder Traversal:\n");
+		A.morrisPreOrder(A.head);
+		print("\n");
 
-
+		print("\n\n");
 		print("PostOrder Traversal:\n");
 		A.postOrder(A.head);
 		print("\n");
@@ -312,7 +344,11 @@ class Traversals{
 		print("Iterative PostOrder Traversal With One Stack:\n");
 		A.iterativePostOrderOneStack(A.head);
 		print("\n");
+		print("Morris PostOrder Traversal:\n");
+		A.morrisPostOrder(A.head);
+		print("\n");
 
+		print("\n\n");
 		print("Reverse InOrder Traversal:\n");
 		A.reverseInOrder(A.head);
 		print("\n");
@@ -323,7 +359,7 @@ class Traversals{
 		A.morrisReverseInOrder(A.head);
 		print("\n");
 
-
+		print("\n\n");
 		print("Breadth First Order:\n");
 		A.bfs(A.head);
 		print("\n");

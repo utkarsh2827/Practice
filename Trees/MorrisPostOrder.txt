@@ -1,0 +1,13 @@
+Create a dummy node and initialise it's left child as the root node.
+curr = dummy
+while curr!=null:
+	a) If curr.left == null:
+		set curr = curr.right
+	b) else find predecessor
+		if pred.right == null:
+			pred.right = curr
+			curr = curr.left
+		else:
+			pred.right = null
+			use reverse function which outputs reverse order of nodes from input node and print this output
+			update curr to curr.right
