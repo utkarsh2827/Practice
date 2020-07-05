@@ -1,5 +1,5 @@
 import java.util.*;
-class Traversals{
+public class Traversals{
 	static class Node{
 		int data;
 		Node left, right;
