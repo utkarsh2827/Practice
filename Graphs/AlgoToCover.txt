@@ -8,3 +8,4 @@ Cycle Detection(in Directed Graphs)
 Bellman Ford
 Floyd Warshall
 Topological Sort(Kahn's and dfs)
+Union Find
