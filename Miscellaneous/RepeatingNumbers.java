@@ -16,7 +16,14 @@ class RepeatingNumbers{
 		// We'll leverage this fact to find one set bit and partition the array into two groups.
 		// First group shall contain all the elements where that particular bit is set and the second will have the numbers with that bit unset.
 		// We'll use the rightmost set bit as its the easiest to find.
-		xor = xor^~(xor-1);//rightmost set bit
+		int bit=0;
+        for(int i = 0;i<32;i++){
+            if((xor&(1<<i))!=0){
+                bit = i; //rightmost set bit position.
+                break;
+            }
+        }
+        xor = 1<<bit;
 		for(int num:nums){
 			if((num&xor)==0){
 				ans.set(0,ans.get(0)^num);
