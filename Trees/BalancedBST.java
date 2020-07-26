@@ -134,13 +134,13 @@ public class BalancedBST{
 		}
 
 		// Left-Right Case
-		if(bf>1 && x>node.left.data){
+		if(bf>1 && x>=node.left.data){
 			node.left = leftRotate(node.left);
 			return rightRotate(node);
 		}
 
 		// Right-Left Case
-		if(bf<-1 && x<=node.right.data){
+		if(bf<-1 && x<node.right.data){
 			node.right = rightRotate(node.right);
 			return leftRotate(node);
 		}
