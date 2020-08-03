@@ -14,14 +14,19 @@ public class MaxProfitStockOneTrans{
 		}
 		int maxProfit = Integer.MIN_VALUE;
 		int i = 0;
-		while(i<n-1){
-			int profit = 0;
-			while(i<n-1&&arr[i]<arr[i+1]){
-				profit+=arr[i+1]-arr[i];
-				i++;
-			}
-			maxProfit = Math.max(maxProfit,profit);
-			if(profit==0)i++;
+		// while(i<n-1){
+		// 	int profit = 0;
+		// 	while(i<n-1&&arr[i]<arr[i+1]){
+		// 		profit+=arr[i+1]-arr[i];
+		// 		i++;
+		// 	}
+		// 	maxProfit = Math.max(maxProfit,profit);
+		// 	if(profit==0)i++;
+		// }
+		int min = arr[0];
+		for(i = 0;i<n;i++){
+			min = Math.min(min,arr[i]);
+			maxProfit = Math.max(maxProfit,arr[i]-min);
 		}
 		print("Maximum Profit: "+maxProfit+"\n");
 	}

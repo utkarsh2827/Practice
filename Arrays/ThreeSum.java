@@ -6,8 +6,8 @@ public class ThreeSum{
 		ArrayList<ArrayList<Integer>> ans = new ArrayList<ArrayList<Integer>>();
 
 		Arrays.sort(arr);
-
-		for(int i = 0;i<arr.length;i++){
+		int i;
+		for(i = 0;i<arr.length;i++){
 			if(i>0 && arr[i]==arr[i-1]){
 				continue;
 			}
